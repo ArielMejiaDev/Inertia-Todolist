@@ -142,6 +142,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/js/Pages" />
+      <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/storage/app/public/profile_pictures" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -163,7 +165,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598468579579</updated>
       <workItem from="1598468580805" duration="4902000" />
-      <workItem from="1598518900350" duration="23890000" />
+      <workItem from="1598518900350" duration="27067000" />
     </task>
     <servers />
   </component>

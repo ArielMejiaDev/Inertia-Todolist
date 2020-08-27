@@ -21,10 +21,10 @@ Route::resource('/todos', 'TodosController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/profile', 'ProfileController@show')->name('profile.show');
+Route::get('/profile', 'ProfileController@show')->name('profile.show')->middleware('auth');
 
-Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
+Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit')->middleware('auth');
 
-Route::put('/profile', 'ProfileController@update')->name('profile.update');
+Route::put('/profile', 'ProfileController@update')->name('profile.update')->middleware('auth');
 
 Route::view('/contact-me', 'contact-me');

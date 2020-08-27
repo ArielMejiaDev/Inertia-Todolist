@@ -13,6 +13,13 @@ use Inertia\Response as InertiaResponse;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        if(! auth()->check()) {
+            return Redirect::route('login');
+        }
+    }
+
     /**
      * Display the specified resource.
      *
