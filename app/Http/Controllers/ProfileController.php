@@ -52,11 +52,11 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         if(auth()->user()->profile->profile_picture) {
-            Storage::delete('public/' . auth()->user()->profile->profile_picture);
+            Storage::delete('uploads/' . auth()->user()->profile->profile_picture);
         }
-        $picture = $request->file('profile_picture')->store('public/profiles');
+        $picture = $request->file('profile_picture')->store('public/uploads');
         $profile = auth()->user()->profile;
-        $profile->update(['profile_picture' => 'profiles/' . basename($picture)]);
+        $profile->update(['profile_picture' => 'uploads/' . basename($picture)]);
         return Redirect::route('profile.show');
     }
 }
