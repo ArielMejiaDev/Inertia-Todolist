@@ -23,7 +23,6 @@ export default {
         },
         submit() {
             const form = new FormData();
-            console.log(this.profile_picture);
             form.append('profile_picture', this.profile_picture);
             form.append('_method', 'put')
             this.$inertia.post('/profile', form);
