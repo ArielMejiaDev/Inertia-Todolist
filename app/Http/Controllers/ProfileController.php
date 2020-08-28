@@ -54,9 +54,9 @@ class ProfileController extends Controller
         if(auth()->user()->profile->profile_picture) {
             Storage::delete('public/' . auth()->user()->profile->profile_picture);
         }
-        $picture = $request->file('profile_picture')->store('public/profile_pictures');
+        $picture = $request->file('profile_picture')->store('public/profiles');
         $profile = auth()->user()->profile;
-        $profile->update(['profile_picture' => 'profile_pictures/' . basename($picture)]);
+        $profile->update(['profile_picture' => 'profiles/' . basename($picture)]);
         return Redirect::route('profile.show');
     }
 }
