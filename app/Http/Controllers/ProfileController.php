@@ -28,8 +28,8 @@ class ProfileController extends Controller
      */
     public function show(Profile $profile)
     {
-        $profile = auth()->user()->profile;
-        return Inertia::render('Profile/Show', compact('profile'));
+        $profile_url = url(auth()->user()->profile->profile_picture);
+        return Inertia::render('Profile/Show', compact('profile_url'));
     }
 
     /**

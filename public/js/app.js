@@ -2043,7 +2043,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  props: ['profile'],
+  props: ['profile_url'],
   methods: {
     submit: function submit() {//
     }
@@ -3487,7 +3487,7 @@ var render = function() {
       [
         _c("img", {
           staticClass: "h-16 w-16 object-cover rounded-full shadow-sm block",
-          attrs: { src: _vm.profile.profile_picture, alt: "profile picture" }
+          attrs: { src: _vm.profile_url, alt: "profile picture" }
         }),
         _vm._v(" "),
         _c(
