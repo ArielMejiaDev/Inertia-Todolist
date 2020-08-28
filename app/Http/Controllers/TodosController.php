@@ -40,8 +40,9 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['title' => 'required']);
         Todo::create($request->only('title'));
-        return Redirect::route('todos.index');
+        return Redirect::route('todos.index')->with(['success' => 'Task added!']);
     }
 
     /**
@@ -87,6 +88,6 @@ class TodosController extends Controller
     public function destroy(Todo $todo)
     {
         $todo->delete();
-        return Redirect::route('todos.index');
+        return Redirect::route('todos.index')->with(['danger' => 'Task deleted!']);
     }
 }

@@ -1,6 +1,12 @@
 <template>
     <div>
         <template v-if="todos.data.length > 0">
+            <div v-if="$page.flash.success" class="bg-green-400 p-2 text-white rounded my-4">
+                {{ $page.flash.success }}
+            </div>
+            <div v-if="$page.flash.danger" class="bg-red-400 p-2 text-white rounded my-4">
+                {{ $page.flash.danger }}
+            </div>
             <div class="flex items-center w-full mb-4">
                 <h2 class="mr-auto">Tasks</h2>
                 <InertiaLink href="/todos/create" class="rounded py-2 px-4 bg-indigo-500 hover:bg-indigo-600 hover:no-underline text-white">Create</InertiaLink>

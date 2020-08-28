@@ -2071,6 +2071,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Create",
@@ -2102,6 +2103,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Shared/Layout */ "./resources/js/Shared/Layout.vue");
 /* harmony import */ var _Shared_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Shared/Pagination */ "./resources/js/Shared/Pagination.vue");
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3550,7 +3557,7 @@ var render = function() {
             }
           ],
           staticClass:
-            "w-full p-2 text-gray-700 bg-gray-200 my-4 rounded focus:outline-none focus:shadow-outline focus:bg-white",
+            "w-full p-2 text-gray-700 bg-gray-200 my-2 rounded focus:outline-none focus:shadow-outline focus:bg-white",
           attrs: { type: "text", name: "title", placeholder: "Task" },
           domProps: { value: _vm.form.title },
           on: {
@@ -3562,6 +3569,17 @@ var render = function() {
             }
           }
         }),
+        _vm._v(" "),
+        _vm.$page.errors.title
+          ? _c(
+              "div",
+              {
+                staticClass:
+                  "text-danger font-extrabold uppercase text-xs my-1 tracking-tight"
+              },
+              [_vm._v(_vm._s(_vm.$page.errors.title[0]))]
+            )
+          : _vm._e(),
         _vm._v(" "),
         _c(
           "button",
@@ -3603,6 +3621,34 @@ var render = function() {
     [
       _vm.todos.data.length > 0
         ? [
+            _vm.$page.flash.success
+              ? _c(
+                  "div",
+                  { staticClass: "bg-green-400 p-2 text-white rounded my-4" },
+                  [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.$page.flash.success) +
+                        "\n        "
+                    )
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.$page.flash.danger
+              ? _c(
+                  "div",
+                  { staticClass: "bg-red-400 p-2 text-white rounded my-4" },
+                  [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.$page.flash.danger) +
+                        "\n        "
+                    )
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c(
               "div",
               { staticClass: "flex items-center w-full mb-4" },

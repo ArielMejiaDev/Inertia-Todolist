@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\UrlWindow;
@@ -31,7 +33,31 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Inertia::share([
+            'auth' => function () {
+                return [
+                    'user' => Auth::user() ? [
+                        'id' => Auth::user()->id,
+                        'first_name' => Auth::user()->name,
+                        'email' => Auth::user()->email,
+                    ] : null,
+                ];
+            },
+            'flash' => function () {
+                return [
+                    'success' => Session::get('success'),
+                    'info' => Session::get('info'),
+                    'message' => Session::get('message'),
+                    'warning' => Session::get('warning'),
+                    'danger' => Session::get('danger'),
+                ];
+            },
+            'errors' => function () {
+                return Session::get('errors')
+                    ? Session::get('errors')->getBag('default')->getMessages()
+                    : (object) [];
+            },
+        ]);
     }
 
     protected function registerLengthAwarePaginator()
