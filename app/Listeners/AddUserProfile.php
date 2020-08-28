@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Profile;
+use http\Env\Request;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -26,6 +27,6 @@ class AddUserProfile
      */
     public function handle($event)
     {
-        return auth()->user()->profile()->save(factory(Profile::class)->make());
+        $event->user->profile()->save(factory(Profile::class)->make());
     }
 }
